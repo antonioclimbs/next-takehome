@@ -7,8 +7,8 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Antonio Jesus Ayala</title>
-        <meta name="description" content="My experience" />
+        <title>FINESSE</title>
+        <meta name="description" content="Quick fashion done right" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

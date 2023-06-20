@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from '../styles/Header.module.css'
 
 const navItems = {
@@ -23,17 +24,19 @@ export default function Header() {
     <nav className={styles.navbar}>
       <div className={styles.mainheader}>
         <Link href='/' className='flex'>
-          <p className='text-xl font-medium'>
-            Antonio Jesus Ayala
-          </p>
+          <Image
+            src="/../public/FINESSE-Logo.png"
+            alt="FINESSE Logo"
+            className={styles.vercelLogo}
+            width={115}
+            height={50}
+            priority
+          />
         </Link>
-        <span>
-          Software Engineer and Web Developer
-        </span>
       </div>
 
       <section className=''>
-        {Object.entries(navItems).map(([path, { name }]) => {
+        {/* {Object.entries(navItems).map(([path, { name }]) => {
           return (
             <Link
               key={path}
@@ -45,7 +48,7 @@ export default function Header() {
               </span>
             </Link>
           );
-        })}
+        })} */}
       </section>
     </nav >
   );

@@ -39,10 +39,10 @@
   align-items: center;
   top: 0;
   width: 100%;
-  background: rgba(13, 0, 27, 0.9);
+  /* background: rgba(13, 0, 27, 0.9); */
   position: fixed;
   padding-bottom: 10px;
-  padding-left: 10%;
+  padding-left: 5%;
   padding-right: 10%;
   padding-top: 20px;
 }
@@ -50,7 +50,7 @@
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .paths:hover span {
-    background: rgba(var(--path-background), 0.25);
+    /* background: rgba(var(--path-background), 0.25); */
     transform: translateX(4px);
   }
 }
@@ -86,7 +86,7 @@
     inset: auto 0 0;
     padding-top: 0;
     height: 200px;
-    background: rgba(10, 10, 10, .9);
+    /* background: rgba(10, 10, 10, .9); */
   }
 
   .paths {
