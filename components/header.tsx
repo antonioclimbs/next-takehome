@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { GoSearch } from 'react-icons/go';
+import { RxHamburgerMenu } from 'react-icons/rx'
 import styles from '../styles/Header.module.css'
 
 const navItems = {
@@ -35,20 +37,14 @@ export default function Header() {
         </Link>
       </div>
 
-      <section className=''>
-        {/* {Object.entries(navItems).map(([path, { name }]) => {
-          return (
-            <Link
-              key={path}
-              href={path}
-              className=""
-            >
-              <span className={styles.paths}>
-                {name}
-              </span>
-            </Link>
-          );
-        })} */}
+      <section className='space-x-5'>
+        <GoSearch size={20} onClick={() => console.log('clicked')} />
+        <button className='content-center' onClick={() => console.log('clicked')} aria-label="Cart">
+          <RxHamburgerMenu size={20} />
+        </button>
+        <button onClick={() => console.log('clicked')} aria-label="Cart">
+          CART
+        </button>
       </section>
     </nav >
   );

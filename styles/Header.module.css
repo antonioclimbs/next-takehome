@@ -34,6 +34,11 @@
   padding-left: 1rem;
 }
 
+.navbar section {
+  display: flex;
+  align-items: center;
+}
+
 .navbar {
   display: flex;
   align-items: center;
@@ -57,23 +62,21 @@
 
 /* Mobile */
 @media (max-width: 700px) {
-  .content {
-    padding: 4rem;
-  }
 
   .navbar {
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
     top: 10px;
     display: flex;
   }
 
   .mainheader {
-    font-size: 0.8rem;
-    position: fixed;
-    top: 60px;
+    /* font-size: 0.8rem; */
+    /* position: relative; */
+    /* top: 60px; */
+    align-items: center;
   }
 
-  .mainheader div {
+  /* .mainheader div {
     display: flex;
     justify-content: center;
     position: relative;
@@ -86,11 +89,10 @@
     inset: auto 0 0;
     padding-top: 0;
     height: 200px;
-    /* background: rgba(10, 10, 10, .9); */
   }
 
   .paths {
     margin: 0;
     padding: 1rem;
-  }
+  } */
 }
