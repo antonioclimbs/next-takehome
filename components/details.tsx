@@ -53,12 +53,12 @@ export default function Details({ props }) {
   return (
     <div className={styles.details}>
       <section className={styles.productName}>
-        <h1>{productName}</h1>
-        <span className=''>${price.toFixed(2)}</span>
+        <h1 className='mb-5'>{productName}</h1>
+        <span className='mb-5'>${price.toFixed(2)}</span>
       </section>
 
       <div className=''>
-        <p>Size</p>
+        <p className='mb-5'>Size</p>
         <div className={styles.allButtons}>
           {buttonSizes}
         </div>

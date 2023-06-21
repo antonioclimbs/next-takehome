@@ -188,8 +188,8 @@
 }
 
 .details {
-  padding-left: 8%;
-  padding-right: 8%;
+  padding-left: 9%;
+  padding-right: 9%;
   min-width: 38%;
   display: flex;
   flex-direction: column;
@@ -248,14 +248,16 @@
 .productName {
   padding-top: 40px;
   margin-top: 10px;
+  margin-bottom: 10px;
   /* display: flex;
-  align-items: center; */
+  flex-direction: column;
+  align-items: space-between; */
 }
 
 .purchase {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   font-family: 'RadiateSans', sans-serif;
   font-size: x-small;
   margin-top: 10px;
@@ -334,6 +336,8 @@
 
   .purchase button {
     width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
     /* margin-top: 5%; */
   }
 
