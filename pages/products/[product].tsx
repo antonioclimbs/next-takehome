@@ -6,36 +6,6 @@ import 'swiper/swiper.min.css';
 import Image from 'next/image';
 import Details from '@/components/details';
 
-// export async function getStaticProps({ params, locale }: GetStaticPropsContext<{ handle: string }>) {
-//   const options = {
-//     method: "GET",
-//     headers: {
-//       Accept: "application/json",
-//       "Content-Type": "application/json;charset=UTF-8",
-//     },
-//     body: JSON.stringify({
-//       a: 10,
-//       b: 20,
-//     }),
-//   };
-
-//   const data = await fetch('localhost:8080/products', options);
-
-//   // const page = await resolveBuilderContent(builderModel, locale, {
-//   //   productHandle: params?.handle,
-//   // })
-
-//   return {
-//     props: {
-//       // page: page,
-//       data: data,
-//       // ...(await getLayoutProps()),
-//     },
-//   }
-// }
-
-
-
 export default function ProductPage({ data }) {
   const router = useRouter();
   const { product, variant } = router.query;

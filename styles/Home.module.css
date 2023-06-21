@@ -141,9 +141,44 @@
   transform: translateZ(0);
 }
 
+
+
+
+
+
+
+
+@font-face {
+  font-family: 'RadiateSans';
+  src: url('../public/radiate-sans-bold-expanded.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Purista';
+  src: url('../public/Purista.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AmpleNu';
+  src: url('../public/FontsFree-Net-AmpleAlt2.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Araboto';
+  src: url('../public/ArabotoNormal400.ttf') format('truetype');
+}
+
 .product {
-  padding-top: 80px;
+  padding-top: 30px;
   display: flex;
+}
+
+.product h1 {
+  font-family: 'RadiateSans', sans-serif;
+}
+
+.product h2 {
+  font-family: 'RadiateSans', sans-serif;
 }
 
 .swiper {
@@ -152,7 +187,34 @@
 }
 
 .details {
-  width: 38%
+  padding-left: 8%;
+  padding-right: 8%;
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 5%; */
+}
+
+.details>*+* {
+  margin-top: 10%;
+}
+
+.details p {
+  font-family: 'Araboto', sans-serif;
+  font-size: small;
+  text-align: left;
+}
+
+.details span {
+  font-family: 'Purista', sans-serif;
+  font-weight: lighter;
+}
+
+.allButtons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1px;
 }
 
 .slide {
@@ -161,8 +223,27 @@
 }
 
 .buttonSizes {
-  margin: 5px;
-  border: 2px;
+  background-color: white;
+  padding: 5px 2px;
+  margin: 1px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: smaller;
+}
+
+.productName {
+  padding-top: 40px;
+  margin-top: 10px;
+  /* display: flex;
+  align-items: center; */
+}
+
+.purchase {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'RadiateSans', sans-serif;
+  font-size: x-small;
 }
 
 /* Mobile */
@@ -172,6 +253,13 @@
     display: contents
   }
 
+  .productName {
+    padding-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .swiper {
     max-width: 42rem;
     justify-items: center;
@@ -179,12 +267,45 @@
 
   .details {
     width: 100%;
+    padding: 24px;
+  }
+
+  .details span {
+    color: gray;
   }
 
   .slide {
     width: 100%;
     padding: 0px;
   }
+
+  .details {
+    display: flex;
+    /* align-self: flex-start; */
+  }
+
+  .details h3 {
+    display: flex;
+    align-self: flex-start;
+    font-size: smaller;
+  }
+
+  .purchase {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%;
+  }
+
+  .purchase button {
+    width: 100%;
+    margin-top: 10%;
+  }
+
+  /* 
+  .details h2 {
+    font-size: smaller;
+  } */
 
 
 
