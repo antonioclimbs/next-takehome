@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.min.css';
 import Image from 'next/image';
 import Details from '@/components/details';
+import ZoomableImage from '@/components/zoomImage';
 
 export default function ProductPage({ data }) {
   const router = useRouter();
@@ -47,6 +48,7 @@ export default function ProductPage({ data }) {
         className={styles.swiper}
       >
         <SwiperSlide className={styles.slide}>
+          {/* <ZoomableImage src='https://cdn.shopify.com/s/files/1/0237/3346/9261/products/file_fbe029d5-ce6f-4a4b-ad03-12de748de70c_1680x.jpg?v=1674955469' /> */}
           <img src='https://cdn.shopify.com/s/files/1/0237/3346/9261/products/file_fbe029d5-ce6f-4a4b-ad03-12de748de70c_1680x.jpg?v=1674955469' alt='image1' />
         </SwiperSlide>
         <SwiperSlide className={styles.slide}>

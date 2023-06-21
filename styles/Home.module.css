@@ -179,6 +179,7 @@
 
 .product h2 {
   font-family: 'RadiateSans', sans-serif;
+  margin-top: 40px;
 }
 
 .swiper {
@@ -195,8 +196,10 @@
   /* margin-top: 5%; */
 }
 
-.details>*+* {
-  margin-top: 10%;
+.details section {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid lightgray;
 }
 
 .details p {
@@ -250,6 +253,7 @@
   justify-content: space-between;
   font-family: 'RadiateSans', sans-serif;
   font-size: x-small;
+  margin-top: 10px;
 }
 
 .purchase div {
@@ -283,6 +287,12 @@
 
   .details span {
     color: gray;
+  }
+
+  .details section {
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+    border: 0px;
   }
 
   .slide {

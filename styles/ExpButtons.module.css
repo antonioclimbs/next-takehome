@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'Purista';
+  src: url('../public/Purista.ttf') format('truetype');
+}
+
+.expandableButton {
+  font-family: 'Purista', sans-serif;
+  font-size: small;
+  border: 1px solid black;
+  /* Styles for the outer container */
+  border-radius: 5px;
+  margin: 3px;
+  padding: 5px;
+}
+
+.toggleButton {
+  width: 100%;
+  /* Styles for the button */
+}
+
+.expandedContent {
+  /* Styles for the expanded content */
+  width: 100%;
+  padding: 5px;
+  border-top: 1px solid black;
+  transition: opacity .3s ease, visibility 1s ease;
+}
+
+.expanded .toggleButton {
+  /* visibility: hidden; */
+  /* Styles when the button is expanded */
+}
+
+.expanded .expandedContent {
+  /* Styles when the content is expanded */
+}
