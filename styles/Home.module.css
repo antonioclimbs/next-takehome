@@ -141,40 +141,26 @@
   transform: translateZ(0);
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  .card:hover {
-    background: rgba(var(--card-rgb), 0.1);
-    border: 1px solid rgba(var(--card-border-rgb), 0.15);
-  }
-
-  .card:hover span {
-    transform: translateX(4px);
-  }
+.product {
+  padding-top: 80px;
+  display: flex;
 }
 
-@media (prefers-reduced-motion) {
-  .thirteen::before {
-    animation: none;
-  }
-
-  .card:hover span {
-    transform: none;
-  }
-}
-
-@media (max-width: 1000px) {
-  .main img {
-    width: 50%;
-    height: 50%;
-  }
+.swiper {
+  max-width: 60%;
+  justify-self: start;
 }
 
 /* Mobile */
 @media (max-width: 700px) {
-  /* .content {
-    padding: 4rem;
-  } */
+  .product {
+    padding-top: 0;
+    display: contents
+  }
+
+  .swiper {
+    max-width: 42rem;
+  }
 
   .grid {
     /* grid-template-columns: 1fr; */

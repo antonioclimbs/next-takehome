@@ -24,28 +24,28 @@ const navItems = {
 export default function Header() {
   return (
     <nav className={styles.navbar}>
-      <div className={styles.mainheader}>
-        <Link href='/' className='flex'>
-          <Image
-            src="/../public/FINESSE-Logo.png"
-            alt="FINESSE Logo"
-            className={styles.vercelLogo}
-            width={115}
-            height={50}
-            priority
-          />
-        </Link>
-      </div>
+      {/* <div className={styles.mainheader}> */}
+      <GoSearch size={20} className='px-0' onClick={() => console.log('clicked')} />
+      <button className='mx-4' onClick={() => console.log('clicked')} aria-label="Cart">
+        <RxHamburgerMenu size={20} />
+      </button>
+      <Link href='https://www.finesse.us' className='justify-self-center'>
+        <Image
+          src="/../public/FINESSE-Logo.png"
+          alt="FINESSE Logo"
+          className={styles.vercelLogo}
+          width={115}
+          height={50}
+          priority
+        />
+      </Link>
+      {/* </div> */}
 
-      <section className='space-x-5'>
-        <GoSearch size={20} onClick={() => console.log('clicked')} />
-        <button className='content-center' onClick={() => console.log('clicked')} aria-label="Cart">
-          <RxHamburgerMenu size={20} />
-        </button>
-        <button onClick={() => console.log('clicked')} aria-label="Cart">
-          CART
-        </button>
-      </section>
+      {/* <section className='space-x-5'> */}
+      <button className='mx-4' onClick={() => console.log('clicked')} aria-label="Cart">
+        CART
+      </button>
+      {/* </section> */}
     </nav >
   );
 }

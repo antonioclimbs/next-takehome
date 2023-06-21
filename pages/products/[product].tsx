@@ -1,0 +1,80 @@
+import { useRouter } from 'next/router';
+import type { GetStaticPropsContext } from 'next'
+import styles from '../../styles/Home.module.css'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper.min.css';
+import Image from 'next/image';
+import Details from '@/components/details';
+
+// export async function getStaticProps({ params, locale }: GetStaticPropsContext<{ handle: string }>) {
+//   const options = {
+//     method: "GET",
+//     headers: {
+//       Accept: "application/json",
+//       "Content-Type": "application/json;charset=UTF-8",
+//     },
+//     body: JSON.stringify({
+//       a: 10,
+//       b: 20,
+//     }),
+//   };
+
+//   const data = await fetch('localhost:8080/products', options);
+
+//   // const page = await resolveBuilderContent(builderModel, locale, {
+//   //   productHandle: params?.handle,
+//   // })
+
+//   return {
+//     props: {
+//       // page: page,
+//       data: data,
+//       // ...(await getLayoutProps()),
+//     },
+//   }
+// }
+
+
+
+export default function ProductPage({ data }) {
+  const router = useRouter();
+  const { product, variant } = router.query;
+
+  const productInfo = {
+    product,
+    variant,
+    price: 36,
+    details: 'details',
+    ...data
+  }
+
+  return (
+    <div className={styles.product}>
+      {/* <section>
+        <h1>Product Page</h1>
+        <p>Product: {product}</p>
+        <p>Query Parameter: {variant}</p>
+      </section> */}
+      <Swiper
+        // zoom={true}
+        navigation // Add navigation arrows
+        pagination={{ clickable: true }} // Add pagination dots
+        className={styles.swiper}
+      >
+        <SwiperSlide>
+          <img src='https://cdn.shopify.com/s/files/1/0237/3346/9261/products/file_fbe029d5-ce6f-4a4b-ad03-12de748de70c_1680x.jpg?v=1674955469' alt='image1' />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src='https://cdn.shopify.com/s/files/1/0237/3346/9261/products/file_d92bb309-b1c6-44fc-b0f6-b7a33a90d693_1100x.jpg?v=1674955469' alt='image1' />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src='https://cdn.shopify.com/s/files/1/0237/3346/9261/products/file_ead9228a-a716-445a-8905-34caea5b18fa_1100x.jpg?v=1674955469' alt='image1' />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src='https://cdn.shopify.com/s/files/1/0237/3346/9261/products/file_86ebb7b3-f1ec-4650-a3db-1983b106db83_1100x.jpg?v=1674955469' alt='image1' />
+        </SwiperSlide>
+      </Swiper>
+      <Details props={productInfo} />
+    </div >
+  );
+};

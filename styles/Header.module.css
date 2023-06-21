@@ -65,8 +65,13 @@
 
   .navbar {
     /* grid-template-columns: 1fr; */
-    top: 10px;
+    top: 0px;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: sticky;
+    z-index: 100;
+    width: 100%;
   }
 
   .mainheader {
