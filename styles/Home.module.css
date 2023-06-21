@@ -147,8 +147,22 @@
 }
 
 .swiper {
-  max-width: 60%;
+  max-width: 62%;
   justify-self: start;
+}
+
+.details {
+  width: 38%
+}
+
+.slide {
+  width: 70%;
+  padding: 10px;
+}
+
+.buttonSizes {
+  margin: 5px;
+  border: 2px;
 }
 
 /* Mobile */
@@ -160,7 +174,22 @@
 
   .swiper {
     max-width: 42rem;
+    justify-items: center;
   }
+
+  .details {
+    width: 100%;
+  }
+
+  .slide {
+    width: 100%;
+    padding: 0px;
+  }
+
+
+
+
+
 
   .grid {
     /* grid-template-columns: 1fr; */

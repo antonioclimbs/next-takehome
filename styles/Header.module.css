@@ -45,7 +45,7 @@
   top: 0;
   width: 100%;
   /* background: rgba(13, 0, 27, 0.9); */
-  position: fixed;
+  position: sticky;
   padding-bottom: 10px;
   padding-left: 5%;
   padding-right: 10%;
