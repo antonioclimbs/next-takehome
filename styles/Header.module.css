@@ -55,6 +55,7 @@
   padding-left: 5%;
   padding-right: 10%;
   padding-top: 20px;
+  z-index: 9999;
   font-family: 'Purista', sans-serif;
   font-size: medium;
 }

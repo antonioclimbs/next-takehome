@@ -1,11 +1,9 @@
 import { useRouter } from 'next/router';
-import type { GetStaticPropsContext } from 'next'
 import styles from '../../styles/Home.module.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.min.css';
-import Image from 'next/image';
 import Details from '@/components/details';
-import ZoomableImage from '@/components/zoomImage';
+import images from '@/public/images.json';
 
 export default function ProductPage({ data }) {
   const router = useRouter();
@@ -18,13 +16,17 @@ export default function ProductPage({ data }) {
     details: 'Angel on earth vibes - look otherworldly in this tie dye printed dress 🦋 Having them all trying to figure out where you came from… heaven, duh 😇',
     ...data
   }
+
+  const slides: JSX.Element[] = [];
+
+  for (let i = 0; i < images.length; i++) {
+    slides.push(<SwiperSlide className={styles.slide} key={i}>
+      <img src={images[i].original} alt={`image${i}`} />
+    </SwiperSlide>)
+  }
+
   return (
     <div className={styles.product}>
-      {/* <section>
-        <h1>Product Page</h1>
-        <p>Product: {product}</p>
-        <p>Query Parameter: {variant}</p>
-      </section> */}
       <Swiper
         loop={true}
         spaceBetween={10}
@@ -41,14 +43,9 @@ export default function ProductPage({ data }) {
         }}
         freeMode={true}
         centeredSlides={true}
-        // zoom={true}
-        // scrollbar={{ draggable: true }}
-        // navigation={true}
-        // pagination={{ clickable: true }} // Add pagination dots
         className={styles.swiper}
       >
-        <SwiperSlide className={styles.slide}>
-          {/* <ZoomableImage src='https://cdn.shopify.com/s/files/1/0237/3346/9261/products/file_fbe029d5-ce6f-4a4b-ad03-12de748de70c_1680x.jpg?v=1674955469' /> */}
+        {/* <SwiperSlide className={styles.slide}>
           <img src='https://cdn.shopify.com/s/files/1/0237/3346/9261/products/file_fbe029d5-ce6f-4a4b-ad03-12de748de70c_1680x.jpg?v=1674955469' alt='image1' />
         </SwiperSlide>
         <SwiperSlide className={styles.slide}>
@@ -59,7 +56,8 @@ export default function ProductPage({ data }) {
         </SwiperSlide>
         <SwiperSlide className={styles.slide}>
           <img src='https://cdn.shopify.com/s/files/1/0237/3346/9261/products/file_86ebb7b3-f1ec-4650-a3db-1983b106db83_1100x.jpg?v=1674955469' alt='image1' />
-        </SwiperSlide>
+        </SwiperSlide> */}
+        {slides}
       </Swiper>
       <Details props={productInfo} />
     </div >

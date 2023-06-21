@@ -17,7 +17,7 @@ const expandableButtonProps = [
   },
   {
     label: 'SIZE GUIDE',
-    info: [`didn't want to copy sizes`,]
+    info: [`Sizes go here (probably as an img)`,]
   }];
 
 export default function Details({ props }) {
@@ -26,17 +26,17 @@ export default function Details({ props }) {
   const sizes = ['XS', 'S', 'M', 'L', 'XL', '1X', '2X', '3X'];
 
   const [quantity, setQuantity] = useState(1);
-  const [sizeSelected, setSizeSelected] = useState('');
+  const [activeButton, setActiveButton] = useState(null);
 
-  const handleClick = (buttonId) => {
-    setSizeSelected(buttonId);
+  const handleClick = (size) => {
+    // console.log('size', size)
+    setActiveButton(size)
   };
 
   let i = 0;
-  const buttonSizes: JSX.Element[] = sizes.map((size) => {
-    i++
+  const buttonSizes: JSX.Element[] = sizes.map((size, index) => {
     return (
-      <button className={styles.buttonSizes} key={i} >
+      <button className={`${styles.buttonSizes} ${activeButton === size ? styles.active : ''}`} onClick={() => handleClick(size)} key={size} >
         {size}
       </button >
     )
@@ -76,7 +76,9 @@ export default function Details({ props }) {
             +
           </button>
         </div>
-        <button className='border w-2/3 rounded-3xl p-1 justify-end bg-black text-white'>ADD TO CART</button>
+        <button className='border w-2/3 rounded-3xl p-1 justify-end bg-black text-white'>
+          ADD TO CART
+        </button>
       </div>
       <button className='border w-full rounded-3xl mt-2 p-1 bg-violet-600 text-white'>BUY WITH shopPay</button>
 

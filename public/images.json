@@ -1,0 +1,22 @@
+[
+  {
+    "original": "https://cdn.shopify.com/s/files/1/0237/3346/9261/products/file_fbe029d5-ce6f-4a4b-ad03-12de748de70c_1680x.jpg?v=1674955469",
+    "largeImage": "@/public/dress1.webp",
+    "alt": "img1"
+  },
+  {
+    "original": "https://cdn.shopify.com/s/files/1/0237/3346/9261/products/file_d92bb309-b1c6-44fc-b0f6-b7a33a90d693_1100x.jpg?v=1674955469",
+    "largeImage": "@/public/dress2.webp",
+    "alt": "img2"
+  },
+  {
+    "original": "https://cdn.shopify.com/s/files/1/0237/3346/9261/products/file_ead9228a-a716-445a-8905-34caea5b18fa_1100x.jpg?v=1674955469",
+    "largeImage": "@/public/dress3.webp",
+    "alt": "img3"
+  },
+  {
+    "original": "https://cdn.shopify.com/s/files/1/0237/3346/9261/products/file_86ebb7b3-f1ec-4650-a3db-1983b106db83_1100x.jpg?v=1674955469",
+    "largeImage": "@/public/dress4.webp",
+    "alt": "img4"
+  }
+]

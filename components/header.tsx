@@ -6,21 +6,6 @@ import { GoSearch } from 'react-icons/go';
 import { RxHamburgerMenu } from 'react-icons/rx'
 import styles from '../styles/Header.module.css'
 
-const navItems = {
-  '/': {
-    name: 'Home',
-  },
-  '/about': {
-    name: 'About',
-  },
-  '/experience': {
-    name: 'Experience',
-  },
-  '/contact': {
-    name: 'Contact',
-  },
-};
-
 export default function Header() {
   return (
     <nav className={styles.navbar}>
