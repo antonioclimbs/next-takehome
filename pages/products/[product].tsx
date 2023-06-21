@@ -1,9 +1,11 @@
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import styles from '../../styles/Home.module.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.min.css';
 import Details from '@/components/details';
 import images from '@/public/images.json';
+import ImageMagnify from 'react-image-magnify';
 
 export default function ProductPage({ data }) {
   const router = useRouter();
@@ -17,11 +19,55 @@ export default function ProductPage({ data }) {
     ...data
   }
 
+  const [isFullScreen, setIsFullScreen] = useState(false);
+
+  const handleToggleFullScreen = () => {
+    if (!isFullScreen) {
+      openFullscreen();
+    } else {
+      closeFullscreen();
+    }
+    setIsFullScreen(!isFullScreen);
+  };
+
+  const openFullscreen = () => {
+    const element = document.documentElement;
+    if (element.requestFullscreen) {
+      element.requestFullscreen();
+    }
+  };
+
+  const closeFullscreen = () => {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  };
+
   const slides: JSX.Element[] = [];
 
   for (let i = 0; i < images.length; i++) {
+    // slides.push(<SwiperSlide className={`${styles.slide} ${isFullScreen ? styles.fullscreen : ''}`} key={i}>
     slides.push(<SwiperSlide className={styles.slide} key={i}>
-      <img src={images[i].original} alt={`image${i}`} />
+      {isFullScreen ? (
+        // <div className={styles.fullscreen}>
+        <div onClick={handleToggleFullScreen}>
+          {/* <ImageMagnify className={''} {...{
+            smallImage: {
+              alt: images[i].alt,
+              isFluidWidth: true,
+              src: images[i].url
+            },
+            largeImage: {
+              src: images[i].url,
+              width: 1680,
+              height: 2100
+            },
+            imagePosition: 'right',
+          }} /> */}
+          <img src={images[i].url} alt={`image${i}`} onClick={handleToggleFullScreen} />
+        </div>) : (
+        <img src={images[i].url} alt={`image${i}`} onClick={handleToggleFullScreen} />
+      )}
     </SwiperSlide>)
   }
 
@@ -29,7 +75,7 @@ export default function ProductPage({ data }) {
     <div className={styles.product}>
       <Swiper
         loop={true}
-        spaceBetween={10}
+        spaceBetween={isFullScreen ? 0 : 10}
         slidesPerView={1.2}
         navigation={{
           nextEl: '.swiper-button-next',
@@ -41,9 +87,9 @@ export default function ProductPage({ data }) {
           snapOnRelease: true,
           dragSize: 'auto',
         }}
-        freeMode={true}
+        // freeMode={true}
         centeredSlides={true}
-        className={styles.swiper}
+      // className={styles.swiper}
       >
         {/* <SwiperSlide className={styles.slide}>
           <img src='https://cdn.shopify.com/s/files/1/0237/3346/9261/products/file_fbe029d5-ce6f-4a4b-ad03-12de748de70c_1680x.jpg?v=1674955469' alt='image1' />
@@ -59,7 +105,7 @@ export default function ProductPage({ data }) {
         </SwiperSlide> */}
         {slides}
       </Swiper>
-      <Details props={productInfo} />
+      {!isFullScreen ? (<Details props={productInfo} />) : null}
     </div >
   );
 };

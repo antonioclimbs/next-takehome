@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  margin: 0;
+  /* margin: 0; */
   text-align: center;
   font: 1em/1.3em "Lucida Grande", Arial, Arial, sans-serif;
 }

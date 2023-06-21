@@ -11,9 +11,9 @@
 
 .main img {
   max-height: 500px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  display: grid;
+  /* margin-left: auto;
+  margin-right: auto; */
 }
 
 .about {
@@ -190,7 +190,7 @@
 .details {
   padding-left: 8%;
   padding-right: 8%;
-  width: 38%;
+  min-width: 38%;
   display: flex;
   flex-direction: column;
   /* margin-top: 5%; */
@@ -220,10 +220,10 @@
   gap: 1px;
 }
 
-.slide {
+/* .slide {
   width: 70%;
   padding: 10px;
-}
+} */
 
 .buttonSizes {
   background-color: white;
@@ -263,6 +263,19 @@
 
 .purchase div {
   width: 33%;
+}
+
+.fullscreen {
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+
+.magnified {
+  position: relative;
+  /* transform: translateX(10px, 10px); */
+  /* Adjust the value as needed to shift the image horizontally */
 }
 
 /* Mobile */
