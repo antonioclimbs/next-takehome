@@ -39,17 +39,24 @@
   align-items: center;
 }
 
+@font-face {
+  font-family: 'Purista';
+  src: url('../public/Purista.ttf') format('truetype');
+}
+
 .navbar {
   display: flex;
   align-items: center;
   top: 0;
   width: 100%;
-  /* background: rgba(13, 0, 27, 0.9); */
+  background: white;
   position: sticky;
   padding-bottom: 10px;
   padding-left: 5%;
   padding-right: 10%;
   padding-top: 20px;
+  font-family: 'Purista', sans-serif;
+  font-size: medium;
 }
 
 /* Enable hover only on non-touch devices */
