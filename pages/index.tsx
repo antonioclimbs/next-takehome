@@ -1,106 +1,58 @@
 import Link from 'next/link';
 import { Inter } from 'next/font/google'
 import styles from '../styles/Home.module.css';
+import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const sandy: JSX.Element[] = [];
+  for (let i = 0; i < 4; i++) {
+    // sandy.push(<SwiperSlide className={styles.slide} key={i}>
+    sandy.push(<SwiperSlide className='' key={i}>
+
+    </SwiperSlide>)
+  }
+
   return (
-    <main className={styles.main}>
-      <div className={styles.center}>
-        <h4 className={styles.description}>
-          Hi, my name is
-        </h4>
-        <br></br>
-        <h1 className='text-5xl font-mono font-bold pb-8'>
-          Antonio Jesus Ayala
-        </h1>
-        <h2 className='text-3xl font-medium font-serif'>
-          I build your applications and websites
-        </h2>
-        <br></br>
-        <h3 className={styles.description}>
-          I&apos;m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I&apos;m focused on building accessible, interactive applications and websites for companies to promote business.
-        </h3>
-      </div>
-
-      <div className={styles.grid}>
-        <Link
-          href="/about"
-          className={styles.card}
+    <main className={styles.details}>
+      <img src='https://cdn.shopify.com/s/files/1/0237/3346/9261/collections/AQUATIC-DESKTOP-BANNER.jpg?v=1687189768' alt='FINESSE-header' className='' />
+      <div>
+        <section className={styles.productName}>
+          <h1 className=''>The hottest fits, voted on by you!</h1>
+          <span className=''>Trending now on Lollipop Street, check out these fire fits.</span>
+        </section>
+        <Swiper
+          loop={true}
+          spaceBetween={10}
+          slidesPerView={1.2}
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          }}
+          scrollbar={{
+            el: '.swiper-scrollbar',
+            draggable: true,
+            snapOnRelease: true,
+            dragSize: 'auto',
+          }}
+          centeredSlides={true}
+          className='w-full'
         >
-          <h2 className={inter.className}>
-            About <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Learn a little about me and some of the technologies that I&apos;ve been working with&nbsp;recently.
-          </p>
-        </Link>
-        <Link
-          href="/experience"
-          className={styles.card}
-        >
-          <h2 className={inter.className}>
-            Experience <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            See what projects I&apos;ve worked on, the different tech I&apos;ve used, and how I&apos;ve contributed to the&nbsp;company.
-          </p>
-        </Link>
-        <Link
-          href="/contact"
-          className={styles.card}
-        >
-          <h2 className={inter.className}>
-            Contact <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Get in contact with me and let&apos;s discuss how we can work together towards creating something&nbsp;exciting.
-          </p>
-        </Link>
-        {/*
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL
-            with&nbsp;Vercel.
-          </p>
-        </a>*/}
+          <button>
+            <Link href={'/products/sandy-tie-dye-print-dress?variant=some-param'} >
+              <Image
+                src="/../public/dress1.webp"
+                alt="Sandy Tie Dye Print Dress"
+                width={300}
+                height={200}
+                priority
+              />
+              Sandy Tie Dye Print Dress
+            </Link>
+          </button>
+        </Swiper>
       </div>
     </main >
   )
